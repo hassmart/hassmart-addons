@@ -8,6 +8,7 @@
   "boot": "auto",
   "image": "hassmart/{arch}-addon-frp",
   "host_network": true,
+  "arch": ["armhf", "amd64", "i386"],
   "options": {
     "server_ip": null,
     "auth_token": null,
