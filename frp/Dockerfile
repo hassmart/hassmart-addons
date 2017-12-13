@@ -7,12 +7,9 @@ ENV LANG C.UTF-8
 ARG BUILD_ARCH
 ARG FRP_VERSION=0.14.0
 ARG FRP_ARCH="arm"
-#RUN apk update \
-#    && apk add ca-certificates wget \
-#    && update-ca-certificates
-RUN apk add --no-cache jq
+RUN apk update \
+     && apk add --no-cache jq wget
 
-#WORKDIR /tmp
 RUN set -x \
     && if [ $BUILD_ARCH == "armhf" ]; then FRP_ARCH="arm"; fi \
     && if [ $BUILD_ARCH == "amd64" ]; then FRP_ARCH="amd64"; fi \
