@@ -4,6 +4,7 @@ CONFIG_PATH=/data/options.json
 SERVERIP=$(jq --raw-output ".serverip" $CONFIG_PATH)
 SERVERPORT=$(jq --raw-output ".serverport" $CONFIG_PATH)
 VERSION=$(jq --raw-output ".version" $CONFIG_PATH)
+URL_VERSION="https://raw.githubusercontent.com/hassmart/hassmart-addons/master/version.json"
 
 if [ "$SERVERIP" == "" ]; then
   echo "[ERROR] serverip must be specified!"
@@ -33,8 +34,7 @@ if [ ! -z $VERSION ] && [ ! "$VERSION" == "" ] && [ ! "$VERSION" == "null" ] && 
   echo "Manual version override:" $VERSION
 else
   #Check the latest version on github
-  VERSION="$(curl -sX GET https://api.github.com/repos/bwssytems/ha-bridge/releases/latest | grep 'tag_name' | cut -d\" -f4)"
-  VERSION=${VERSION:1}
+  VERSION=$(curl -s $URL_VERSION | jq -e -r '.habridge')
   echo "Latest version on bwssystems github repo is" $VERSION
 fi
 
