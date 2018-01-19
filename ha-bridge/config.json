@@ -1,0 +1,29 @@
+{
+  "name": "HA Bridge",
+  "version": "4.5.6p3",
+  "slug": "ha-bridge",
+  "description": "HA Bridge - Hue Emulator (https://github.com/bwssytems/ha-bridge)",
+  "url": "https://github.com/notoriousbdg/hassio-addons/tree/master/ha-bridge",
+  "webui": "http://[HOST]:[PORT:80]",
+  "arch": [
+    "armhf",
+    "amd64"
+  ],
+  "map": [
+    "share:rw",
+    "ssl"
+  ],
+  "startup": "application",
+  "boot": "auto",
+  "host_network": true,
+  "options": {
+    "serverip": null,
+    "serverport": 80,
+    "version": "latest"
+  },
+  "schema": {
+    "serverip": "str",
+    "serverport": "int",
+    "version": "str"
+  }
+}
