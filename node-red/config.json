@@ -13,6 +13,7 @@
     "share:rw",
     "ssl"
   ],
+  "image": "hassmart/{arch}-addon-nodered",
   "startup": "application",
   "boot": "auto",
   "host_network": true,
