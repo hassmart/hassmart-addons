@@ -1,6 +1,0 @@
-{
-  "build_from": {
-    "armhf": "resin/rpi-raspbian:jessie",
-    "amd64": "library/debian:jessie"
-  }
-}
