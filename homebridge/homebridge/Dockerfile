@@ -18,6 +18,7 @@ RUN \
         git \
         nodejs \
         nodejs-npm \
+        ffmpeg \
     \
     && npm set unsafe-perm true \
     \
@@ -25,6 +26,7 @@ RUN \
         node-gyp \
         homebridge@0.4.36 \
         homebridge-homeassistant@3.0.2 \
+        homebridge-camera-ffmpeg@0.1.0 \
     \
     && apk del --purge .build-dependencies
 
