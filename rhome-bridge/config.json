@@ -1,0 +1,24 @@
+{
+  "name": "rhome-bridge",
+  "version": "0.0.1",
+  "slug": "rhome-bridge",
+  "description": "Bridge between homebase and homeassistant.",
+  "url": "https://github.com/SchumyHao/homebase-hass-bridge",
+  "startup": "application",
+  "boot": "auto",
+  "image": "hassmart/{arch}-addon-rhome-bridge",
+  "host_network": true,
+  "arch": ["amd64"],
+  "options": {
+    "hass_ip": "127.0.0.1",
+    "hass_port": "8123",
+    "hass_passwd": null,
+    "rhome_port": "9999"
+  },
+  "schema": {
+    "hass_ip": "str?",
+    "hass_port": "str?",
+    "hass_passwd": "str?",
+    "rhome_port": "str?"
+  }
+}
